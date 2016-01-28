@@ -5,8 +5,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CSVReaderMain implements IDBHelper{
 	RouteList routeList = new RouteList();
@@ -50,7 +53,7 @@ public class CSVReaderMain implements IDBHelper{
 		br = new BufferedReader(new FileReader(new File(csvTimeDuration)));
 		br.readLine();
 		while((strLin = br.readLine()) != null) {
-			System.out.println(strLin);
+			//System.out.println(strLin);
 			if(strLin.length() >= 0) {
 			String[] strSplit = strLin.split(",");
 			String stopId1 = strSplit[1].replaceAll("\\\"", "");
@@ -58,7 +61,7 @@ public class CSVReaderMain implements IDBHelper{
 			int startTime = Integer.parseInt(strSplit[6].replaceAll("\\\"", ""));
 			int endTime = Integer.parseInt(strSplit[7].replaceAll("\\\"", ""));
 			int duration = Integer.parseInt(strSplit[9]);
-			System.out.println(stopId1+ " " + stopId2 + " " + startTime + " " + endTime + " " + duration);
+			//System.out.println(stopId1+ " " + stopId2 + " " + startTime + " " + endTime + " " + duration);
 			createStopTimeTravelDurationEntry(stopId1, stopId2, startTime, endTime, duration);
 			}
 		}
@@ -71,12 +74,13 @@ public class CSVReaderMain implements IDBHelper{
 		br = new BufferedReader(new FileReader(new File(csvSchedule)));
 		br.readLine();
 		while((strLin = br.readLine()) != null) {
-			System.out.println(strLin);
+			//System.out.println(strLin);
 			String[] strSplit = strLin.split(",");
-			System.out.println(strSplit[16]);
+			//System.out.println(strSplit[11]);
 			
-			String routeId = strSplit[16];
-			int startTime = Integer.parseInt(strSplit[17]);
+			String routeId = strSplit[11];
+			String[] times = strSplit[12].split(":");
+			int startTime = Integer.parseInt(times[0])*60 + Integer.parseInt(times[1]);
 			
 			Route route = routeList.getRoute(routeId);
 			if(route != null) {

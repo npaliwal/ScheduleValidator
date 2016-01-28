@@ -25,7 +25,7 @@ public class Route {
 
 	public int getTimeForRoute(StopTimeSet stopTimeSet, int tripStartTime) {
 		int timeAtStop = tripStartTime;
-		for(int i = 0; i < size-1; i++) {
+		for(int i = 1; i < size; i++) {
 			int timeBetweenStops = stopTimeSet.getTimeBetweenStops(stopSequence[i], stopSequence[i+1], timeAtStop);
 			timeAtStop += timeBetweenStops;
 		}
