@@ -1,6 +1,8 @@
-package org.model;
+package org.model.stopduration;
 
 import java.util.ArrayList;
+
+import org.model.routestop.Stop;
 
 public class StopTimeSet {
 
@@ -24,7 +26,7 @@ public class StopTimeSet {
 
 	public StopTime getStopTime(String stopId1, String stopId2) {
 		for(StopTime stopTime : stopTimeList) {
-			if(stopTime.getStop1().equals(stopId1) && stopTime.getStop2().equals(stopId2))
+			if(stopTime.getStop1().getId().equals(stopId1) && stopTime.getStop2().getId().equals(stopId2))
 				return stopTime;
 		}
 		return null;

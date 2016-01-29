@@ -1,4 +1,4 @@
-package org.model;
+package org.model.routestop;
 
 public class Stop {
 	private String id;

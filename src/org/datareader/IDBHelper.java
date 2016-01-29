@@ -1,6 +1,12 @@
-package org.model;
+package org.datareader;
 
 import java.util.List;
+
+import org.model.routestop.Route;
+import org.model.routestop.Stop;
+import org.model.stopduration.StopTime;
+import org.model.stopduration.StopTimeSet;
+import org.model.stopduration.TimeDurationTravel;
 
 public interface IDBHelper {
 	List<Stop> getAllStopsOfRoute(String routeId);

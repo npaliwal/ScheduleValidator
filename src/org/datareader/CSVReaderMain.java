@@ -1,4 +1,4 @@
-package org.model;
+package org.datareader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,6 +10,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import org.model.routestop.Route;
+import org.model.routestop.RouteList;
+import org.model.routestop.Stop;
+import org.model.stopduration.StopTime;
+import org.model.stopduration.StopTimeSet;
+import org.model.stopduration.TimeDurationTravel;
 
 public class CSVReaderMain implements IDBHelper{
 	RouteList routeList = new RouteList();

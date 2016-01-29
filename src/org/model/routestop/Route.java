@@ -1,6 +1,8 @@
-package org.model;
+package org.model.routestop;
 
 import java.util.List;
+
+import org.model.stopduration.StopTimeSet;
 
 public class Route {
 	private String id;
@@ -29,7 +31,7 @@ public class Route {
 			int timeBetweenStops = stopTimeSet.getTimeBetweenStops(stopSequence[i], stopSequence[i+1], timeAtStop);
 			timeAtStop += timeBetweenStops;
 		}
-		return timeAtStop;
+		return timeAtStop-tripStartTime;
 	}
 
 	public void appendStopAtPosition(Stop stop, int position) {

@@ -1,6 +1,8 @@
-package org.model;
+package org.model.stopduration;
 
 import java.util.ArrayList;
+
+import org.model.routestop.Stop;
 
 
 

@@ -1,4 +1,4 @@
-package org.model;
+package org.model.routestop;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.model;
+package org.model.stopduration;
 
 public class TimeDurationTravel {
 
