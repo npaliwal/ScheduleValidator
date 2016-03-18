@@ -17,10 +17,15 @@ public class StopTimeSet {
 	}
 
 	public int getTimeBetweenStops(Stop stopId1, Stop stopId2, int timeAtStop) {
-		for(StopTime stopTime : stopTimeList)
+		for(StopTime stopTime : stopTimeList) {
+			//System.out.println(stopTime.getStop1().getId() + "###" + stopTime.getStop2().getId() + " " + stopId1.getId() + " " + stopId2.getId());
+			/*if(stopTime.getStop1() == null || stopTime.getStop1().getId() == null || stopTime.getStop2() == null || stopTime.getStop2().getId() == null)
+				return 2;*/
 			if(stopTime.getStop1().getId().equals(stopId1.getId()) && stopTime.getStop2().getId().equals(stopId2.getId())) {
+				//System.out.print(stopId1.getId() + stopId2.getId() + " ");
 				return stopTime.getTimeToTravel(timeAtStop);
 			}
+		}
 		return 0;
 	}
 

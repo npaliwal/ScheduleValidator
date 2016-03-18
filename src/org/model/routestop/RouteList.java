@@ -16,6 +16,7 @@ public class RouteList {
 
 	public Route getRoute(String routeId) {
 		for(Route route : list) {
+			//System.out.println(route.getId() + " " + routeId);
 			if(route.getId().equals(routeId))
 				return route;
 		}

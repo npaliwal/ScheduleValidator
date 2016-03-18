@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.model.bus.Bus;
 import org.model.routestop.Route;
 import org.model.routestop.RouteList;
 import org.model.routestop.Stop;
@@ -32,7 +33,7 @@ public class DBReaderMain implements IDBHelper{
 		
 		DBReaderMain obj = new DBReaderMain();
 		
-		obj.readFiles(args[0] + csvRouteStop, args[0] + csvTimeDuration, args[0] + csvSchedule);
+		//obj.readFiles(args[0] + csvRouteStop, args[0] + csvTimeDuration, args[0] + csvSchedule);
 	}
 
 	private void readFiles(String csvRouteStop, String csvTimeDuration, String csvSchedule) throws IOException {
@@ -95,7 +96,7 @@ public class DBReaderMain implements IDBHelper{
 			
 			Route route = routeList.getRoute(routeId);
 			if(route != null) {
-				System.out.println(route.getTimeForRoute(stopTimeSet, startTime));
+				//System.out.println(route.getTimeForRoute(stopTimeSet, startTime));
 			}
 		}
 		
@@ -185,5 +186,17 @@ public class DBReaderMain implements IDBHelper{
 	public void appendStopTimeToSet(StopTimeSet stopTimeSet, StopTime stopTime) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void createRouteEntry(String routeId, double startLat, double startLong, double stopLat, double stopLong) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Bus createBusEntry(String busId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

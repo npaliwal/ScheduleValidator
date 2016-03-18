@@ -2,6 +2,7 @@ package org.datareader;
 
 import java.util.List;
 
+import org.model.bus.Bus;
 import org.model.routestop.Route;
 import org.model.routestop.Stop;
 import org.model.stopduration.StopTime;
@@ -21,4 +22,6 @@ public interface IDBHelper {
 			int duration);
 	Stop createNewStop(String stopId);
 	TimeDurationTravel createTimeDurationTravel(int startTime, int endTime, int duration);
+	void createRouteEntry(String routeId, double startLat, double startLong, double stopLat, double stopLong);
+	Bus createBusEntry(String busId);
 }

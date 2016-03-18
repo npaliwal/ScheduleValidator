@@ -53,8 +53,10 @@ public class StopTime {
 	public int getTimeToTravel(int timeAtStop) {
 		for(TimeDurationTravel timeDurationTravel : timeList) {
 			if(timeAtStop >= timeDurationTravel.getStartTime() &&
-					timeAtStop < timeDurationTravel.getEndTime())
+					timeAtStop < timeDurationTravel.getEndTime()) {
+				//System.out.println(timeAtStop + " " + timeDurationTravel.getStartTime() + " " + timeDurationTravel.getEndTime() + " " + timeDurationTravel.getTravelTime());
 				return timeDurationTravel.getTravelTime();
+			}
 		}
 		return 0;
 	}
